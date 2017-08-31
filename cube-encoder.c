@@ -47,7 +47,11 @@ int main(int argc, char **argv) {
 	for (executable = argv[0]; *executable; ++executable) {
 		*executable = tolower(*executable);
 	}
-	executable = argv[0];
+    executable = argv[0];
+    if (ends_with(executable, "cube3-encoder") ||
+        ends_with(executable, "cube3-encoder.exe")) {
+        extension = ".cube3";
+    }
     if (ends_with(executable, "cubex-encoder") ||
 		ends_with(executable, "cubex-encoder.exe")) {
         userkey = cubex_key;
